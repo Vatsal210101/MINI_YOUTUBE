@@ -1,0 +1,144 @@
+.navbar {
+  background: rgba(26, 26, 46, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 0, 0, 0.1);
+  padding: 18px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+.nav-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-logo {
+  font-size: 28px;
+  font-weight: 900;
+  background: linear-gradient(135deg, #ff0000 0%, #ff6b6b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 30px rgba(255, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-logo:hover {
+  transform: scale(1.05);
+  filter: brightness(1.2);
+}
+
+.nav-search {
+  flex: 1;
+  max-width: 600px;
+  display: flex;
+  align-items: center;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-link {
+  color: #fff;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  position: relative;
+  padding: 8px 0;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #ff0000, #ff6b6b);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #ff0000;
+  transform: translateY(-2px);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 16px;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.user-profile:hover {
+  background: rgba(255, 0, 0, 0.1);
+  box-shadow: 0 4px 15px rgba(255, 0, 0, 0.2);
+}
+
+.nav-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ff0000;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.user-profile:hover .nav-avatar {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+}
+
+@media (max-width: 968px) {
+  .nav-container {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .nav-search {
+    order: 3;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .nav-menu {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-container {
+    padding: 0 1rem;
+  }
+  
+  .nav-logo {
+    font-size: 1.3rem;
+  }
+  
+  .nav-link {
+    padding: 0.4rem 0;
+    font-size: 0.9rem;
+  }
+}

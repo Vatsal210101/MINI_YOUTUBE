@@ -1,0 +1,21 @@
+.upload-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #1a1a1a;
+  border-radius: 8px;
+}
+
+.upload-container h1 {
+  margin-bottom: 30px;
+}
+
+.upload-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.upload-form button[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

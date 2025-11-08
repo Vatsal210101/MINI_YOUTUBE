@@ -1,0 +1,178 @@
+.playlists-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, rgba(220, 38, 38, 0.1) 0%, rgba(147, 51, 234, 0.1) 100%);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.playlists-header h1 {
+  font-size: 2.5rem;
+  background: linear-gradient(to right, #dc2626, #9333ea);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+.playlists-header p {
+  color: #888;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.playlists-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.playlist-card {
+  background: rgba(26, 26, 46, 0.8) !important;
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 15px !important;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.playlist-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(220, 38, 38, 0.3) !important;
+  border-color: rgba(220, 38, 38, 0.5) !important;
+}
+
+.playlist-thumbnail {
+  position: relative;
+}
+
+.playlist-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.playlist-card:hover .playlist-overlay {
+  opacity: 1;
+}
+
+.playlist-name {
+  font-weight: 600 !important;
+  color: white !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.playlist-description {
+  color: #888 !important;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 1rem !important;
+}
+
+.playlist-actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: rgba(26, 26, 46, 0.6);
+  border-radius: 20px;
+  border: 2px dashed rgba(255, 255, 255, 0.1);
+}
+
+.empty-state p {
+  margin: 1.5rem 0;
+  color: #888;
+  font-size: 1.2rem;
+}
+
+/* Material-UI overrides */
+.MuiCard-root {
+  background: rgba(26, 26, 46, 0.8) !important;
+}
+
+.MuiCardContent-root {
+  background: rgba(26, 26, 46, 0.8);
+  color: white;
+}
+
+.MuiDialog-paper {
+  background: rgba(26, 26, 46, 0.95) !important;
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px !important;
+}
+
+.MuiDialogTitle-root {
+  background: linear-gradient(to right, #dc2626, #9333ea);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
+.MuiTextField-root {
+  margin-top: 1rem !important;
+}
+
+.MuiOutlinedInput-root {
+  color: white !important;
+}
+
+.MuiOutlinedInput-notchedOutline {
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+  border-color: rgba(220, 38, 38, 0.5) !important;
+}
+
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #dc2626 !important;
+}
+
+.MuiInputLabel-root {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.MuiInputLabel-root.Mui-focused {
+  color: #dc2626 !important;
+}
+
+@media (max-width: 768px) {
+  .playlists-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .playlists-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .playlists-header h1 {
+    font-size: 2rem;
+  }
+}
